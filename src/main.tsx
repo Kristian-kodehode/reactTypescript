@@ -6,9 +6,9 @@ import "./fonts/fonts.css";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <HashRouter>
-    <React.StrictMode>
+  <React.StrictMode>
+    <HashRouter>
       <App />
-    </React.StrictMode>
-  </HashRouter>
+    </HashRouter>
+  </React.StrictMode>
 );
