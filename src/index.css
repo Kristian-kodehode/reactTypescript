@@ -16,6 +16,17 @@ h1 {
   line-height: calc(3rem * 1.5);
 }
 
+nav {
+  display: flex;
+  padding: 1em;
+  gap: 1em;
+}
+footer {
+  display: flex;
+  padding: 1em;
+  gap: 1em;
+}
+
 li {
   list-style: none;
 }
