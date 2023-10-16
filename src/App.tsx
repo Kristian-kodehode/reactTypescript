@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Routes/layout/Layout";
-import Main from "./Routes/main/Main";
+import Main from "./Routes/main/MainPage";
 import Secondary from "./Routes/footer/secondary/Secondary";
 
 function App() {
