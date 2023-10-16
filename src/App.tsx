@@ -2,6 +2,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Routes/layout/Layout";
 import Main from "./Routes/main/Main";
+import Secondary from "./Routes/footer/secondary/Secondary";
 
 function App() {
   return (
@@ -14,6 +15,10 @@ function App() {
           <Route
             index
             element={<Main />}
+          />
+          <Route
+            path="/secondary"
+            element={<Secondary />}
           />
         </Route>
       </Routes>
