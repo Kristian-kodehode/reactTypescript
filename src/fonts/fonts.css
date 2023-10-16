@@ -1,0 +1,4 @@
+@font-face {
+  font-family: "abigate";
+  src: local("abigate"), url(./abigatedesgo.woff2) format("woff2");
+}
