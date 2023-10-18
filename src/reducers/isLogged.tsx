@@ -1,5 +1,5 @@
 const isLogged = (
-  state: boolean = false,
+  state: boolean = true,
   action: { type: string } | undefined
 ) => {
   switch (action?.type) {

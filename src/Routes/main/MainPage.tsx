@@ -12,7 +12,7 @@ interface Product {
 const Main = () => {
   const [data, setData] = useState<Product[]>([]);
   const counter = useSelector((state) => state.counter);
-  const isLogged = useSelector((state) => state.isLogged);
+  const isLoggedIn = useSelector((state) => state.isLogged);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -39,23 +39,25 @@ const Main = () => {
 
       <button onClick={() => dispatch(isLogged())}>Login</button>
 
-      {isLogged ? (
-        <ul className="cards-container">
+      {isLoggedIn ? (
+        <div className="cards-container">
           {data.map((product) => (
-            <li
+            <div
               key={product.id}
               className="card-item"
             >
-              <img
-                className="image-style"
-                src={product.image}
-                alt={product.title}
-                style={{ width: "200px" }}
-              />
+              <div className="image-container">
+                <img
+                  className="image-style"
+                  src={product.image}
+                  alt={product.title}
+                  style={{ width: "200px" }}
+                />
+              </div>
               <h3>{product.title}</h3>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         "You are not allowed to view products"
       )}
