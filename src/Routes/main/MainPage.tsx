@@ -24,10 +24,14 @@ const Main = () => {
   return (
     <div>
       <h1>This is the main page</h1>
-      <ul>
+      <ul className="cards-container">
         {data.map((product) => (
-          <li key={product.id}>
+          <li
+            key={product.id}
+            className="card-item"
+          >
             <img
+              className="image-style"
               src={product.image}
               alt={product.title}
               style={{ width: "200px" }}
