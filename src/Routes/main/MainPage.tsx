@@ -26,7 +26,7 @@ const Main = () => {
   return (
     <div>
       <h1>This is the main page</h1>
-      {/* <ul className="cards-container">
+      <ul className="cards-container">
         {data.map((product) => (
           <li
             key={product.id}
@@ -41,7 +41,7 @@ const Main = () => {
             <h3>{product.title}</h3>
           </li>
         ))}
-      </ul> */}
+      </ul>
     </div>
   );
 };
