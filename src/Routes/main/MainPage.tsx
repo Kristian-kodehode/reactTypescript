@@ -12,7 +12,6 @@ interface Product {
 const Main = () => {
   const [data, setData] = useState<Product[]>([]);
   const counter = useSelector((state) => state.counter);
-
   const isLoggedIn = useSelector((state) => state.isLogged);
   const dispatch = useDispatch();
 
@@ -20,7 +19,6 @@ const Main = () => {
     const fetchData = async () => {
       try {
         const response = await fetch("https://fakestoreapi.com/products");
-        // const response = await fetch("http://www.colourlovers.com/api/colors");
         console.log(response);
         const result = await response.json();
         console.log(result);
