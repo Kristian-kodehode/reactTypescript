@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { decrement, increment, isLogged } from "../../actions";
+import { useDispatch } from "react-redux";
+// import counterReducer from "../../reducers/Counter";
 
 interface Product {
   id: number;
@@ -7,6 +11,9 @@ interface Product {
 }
 const Main = () => {
   const [data, setData] = useState<Product[]>([]);
+  const counter = useSelector((state) => state.counter);
+  const isLogged = useSelector((state) => state.isLogged);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,22 +33,32 @@ const Main = () => {
   return (
     <div>
       <h1>This is the main page</h1>
-      <ul className="cards-container">
-        {data.map((product) => (
-          <li
-            key={product.id}
-            className="card-item"
-          >
-            <img
-              className="image-style"
-              src={product.image}
-              alt={product.title}
-              style={{ width: "200px" }}
-            />
-            <h3>{product.title}</h3>
-          </li>
-        ))}
-      </ul>
+      <h2>{counter}</h2>
+      <button onClick={() => dispatch(decrement())}>-</button>
+      <button onClick={() => dispatch(increment())}>+</button>
+
+      <button onClick={() => dispatch(isLogged())}>Login</button>
+
+      {isLogged ? (
+        <ul className="cards-container">
+          {data.map((product) => (
+            <li
+              key={product.id}
+              className="card-item"
+            >
+              <img
+                className="image-style"
+                src={product.image}
+                alt={product.title}
+                style={{ width: "200px" }}
+              />
+              <h3>{product.title}</h3>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        "You are not allowed to view products"
+      )}
     </div>
   );
 };
