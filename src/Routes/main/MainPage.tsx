@@ -12,6 +12,7 @@ interface Product {
 const Main = () => {
   const [data, setData] = useState<Product[]>([]);
   const counter = useSelector((state) => state.counter);
+
   const isLoggedIn = useSelector((state) => state.isLogged);
   const dispatch = useDispatch();
 
@@ -33,9 +34,6 @@ const Main = () => {
   return (
     <div>
       <h1>This is the main page</h1>
-      <h2>{counter}</h2>
-      <button onClick={() => dispatch(decrement(5))}>-</button>
-      <button onClick={() => dispatch(increment(2))}>+</button>
 
       <button onClick={() => dispatch(isLogged())}>Login</button>
 
@@ -54,6 +52,9 @@ const Main = () => {
                   style={{ width: "200px" }}
                 />
               </div>
+              <h2>{counter}</h2>
+              <button onClick={() => dispatch(decrement(1))}>-</button>
+              <button onClick={() => dispatch(increment(1))}>+</button>
               {/* <h3>{product.title}</h3> */}
             </div>
           ))}
