@@ -52,6 +52,23 @@ a:hover {
   text-decoration: underline;
 }
 
+button {
+  padding: 0.8rem;
+  border: 2px solid rgb(12, 143, 187);
+  background-color: #fafafa;
+  margin: 0.5rem;
+
+  width: 100%;
+  border-radius: 6px;
+  font-weight: 700;
+  color: rgb(12, 143, 187);
+}
+button:hover {
+  cursor: pointer;
+  color: #fafafa;
+  background-color: rgb(12, 143, 187);
+}
+
 li {
   list-style: none;
 }

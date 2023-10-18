@@ -36,26 +36,31 @@ const Main = () => {
       <button onClick={() => dispatch(isLogged())}>Login</button>
 
       {isLoggedIn ? (
-        <div className="cards-container">
-          {data.map((product) => (
-            <div
-              key={product.id}
-              className="card-item"
-            >
-              <div className="image-container">
-                <img
-                  className="image-style"
-                  src={product.image}
-                  alt={product.title}
-                  style={{ width: "200px" }}
-                />
+        <div className="logged-in">
+          <h2>Items in cart: {counter}</h2>
+          <div className="gradient-overlay-left "></div>
+          <div className="cards-container">
+            {data.map((product) => (
+              <div
+                key={product.id}
+                className="card-item"
+              >
+                <div className="image-container">
+                  <img
+                    className="image-style"
+                    src={product.image}
+                    alt={product.title}
+                    style={{ width: "200px" }}
+                  />
+                </div>
+                <div className="buttons-container">
+                  <button onClick={() => dispatch(decrement(1))}>Remove</button>
+                  <button onClick={() => dispatch(increment(1))}>Add</button>
+                </div>
+                {/* <h3>{product.title}</h3> */}
               </div>
-              <h2>{counter}</h2>
-              <button onClick={() => dispatch(decrement(1))}>-</button>
-              <button onClick={() => dispatch(increment(1))}>+</button>
-              {/* <h3>{product.title}</h3> */}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       ) : (
         "You are not allowed to view products"
