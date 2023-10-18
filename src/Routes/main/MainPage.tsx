@@ -9,10 +9,14 @@ interface Product {
   title: string;
   image: string;
 }
+interface RootState {
+  counter: number;
+  isLogged: boolean;
+}
 const Main = () => {
   const [data, setData] = useState<Product[]>([]);
-  const counter = useSelector((state) => state.counter);
-  const isLoggedIn = useSelector((state) => state.isLogged);
+  const counter = useSelector((state: RootState) => state.counter);
+  const isLoggedIn = useSelector((state: RootState) => state.isLogged);
   const dispatch = useDispatch();
 
   useEffect(() => {

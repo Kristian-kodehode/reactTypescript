@@ -1,5 +1,5 @@
 const counterReducer = (
-  state = 0,
+  state: number = 0,
   action:
     | {
         payload: number;
