@@ -28,6 +28,8 @@ footer {
   display: flex;
   padding: 1em;
   gap: 1em;
+  position: static;
+  bottom: 0;
 }
 
 a {

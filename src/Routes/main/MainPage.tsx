@@ -34,8 +34,8 @@ const Main = () => {
     <div>
       <h1>This is the main page</h1>
       <h2>{counter}</h2>
-      <button onClick={() => dispatch(decrement())}>-</button>
-      <button onClick={() => dispatch(increment())}>+</button>
+      <button onClick={() => dispatch(decrement(5))}>-</button>
+      <button onClick={() => dispatch(increment(2))}>+</button>
 
       <button onClick={() => dispatch(isLogged())}>Login</button>
 
@@ -54,7 +54,7 @@ const Main = () => {
                   style={{ width: "200px" }}
                 />
               </div>
-              <h3>{product.title}</h3>
+              {/* <h3>{product.title}</h3> */}
             </div>
           ))}
         </div>
