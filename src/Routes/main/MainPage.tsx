@@ -13,6 +13,7 @@ interface RootState {
   counter: number;
   isLogged: boolean;
 }
+
 const Main = () => {
   const [data, setData] = useState<Product[]>([]);
   const counter = useSelector((state: RootState) => state.counter);
